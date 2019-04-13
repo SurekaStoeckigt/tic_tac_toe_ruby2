@@ -69,3 +69,12 @@ The following principles are followed in designing this game.
 * It will be instantiated with a default value of nil.
 * It can also be instantiated with an 'x' or an 'o'.
 * Next, the player class was designed to keep track of two players during the game, so that a winner could be decided on.
+* The Player class tracks the player's name and symbol of choice. It is instantiated with a hash with the :name and :symbol keys.
+* The board class facilitates the tic-tac-toe grid, and checks how the game ends.
+* The main assumption in the board class is that the grid is a square array of width 3. ie. the grid is an Array of Arrays with the following structure:
+
+grid = [
+    ['X', 'O', 'X'],
+    ['O', 'X', 'O'],
+    ['X', 'O', 'X']
+]
