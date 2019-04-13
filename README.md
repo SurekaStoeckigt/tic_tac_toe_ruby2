@@ -63,3 +63,9 @@ The following principles are followed in designing this game.
 * created the directory for the project
 * run 'bundle init' from the terminal
 * in the Gemfile add 'bundle gem tic_tac_toe' (if you agree to all the permissions follow the displayed instructions)
+
+## Classes
+* Started designing the game by testing the object(Cell) which requires no arguments.
+* It will be instantiated with a default value of nil.
+* It can also be instantiated with an 'x' or an 'o'.
+* Next, the player class was designed to keep track of two players during the game, so that a winner could be decided on.
