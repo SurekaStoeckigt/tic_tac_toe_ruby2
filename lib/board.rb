@@ -24,13 +24,19 @@ module TicTacToe
       false
     end
 
+  #   def formatted_grid
+  #     grid.each do |row|
+  #       puts row.map{ |cell| cell.value.empty? "_" : cell.value }.join("")
+  #   end
+  # end
+
     def draw?
       grid.flatten.map{ |cell_element| cell_element.none_empty?}
     end
 
     def winning_positions
-      grid #rows
-      grid.transpose #columns
+      grid+#rows
+      grid.transpose+ #columns
       diagonals
     end
 
