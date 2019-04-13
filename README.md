@@ -78,3 +78,6 @@ grid = [
     ['O', 'X', 'O'],
     ['X', 'O', 'X']
 ]
+* The board class is initialized with a hash that has a :grid key.
+* The board is filled with empty cell objects on initialization.
+* I attempted to make sure the Board class focuses on behaviour instead of the data structure specified in the method (ie. a nested Array)
