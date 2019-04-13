@@ -53,25 +53,52 @@ end
 context "#game_over" do
 
   it "returns a winner if there is one" do
-    # board = Board.new
-    # board.stub(:winner?) { true }
-    # expect(board.game_over).to eq(:winner)
+    board = Board.new
+    allow(board).to receive(:winner?) {false}
+    allow(board).to receive(:game_over) do |return_result|
+    if board.winner? == true || board.draw? == true
+    return_result = true
+    return :winner?
+  else
+      return_result = false
+    end
+  # board.stub(:winner?) { false }
+  # board.stub(:draw?) {false}
+    expect(board.game_over).to eq(:winner)
   end
+end
 
   it "returns :draw if winner? returns false but draw is true" do
-    # board = Board.new
+    board = Board.new
+    allow(board).to receive(:winner?) {false}
+    allow(board).to receive(:draw?) {true}
+    if board.winner? == false || board.draw? && true
+    return_result = true
+    :draw
+  else
+      return_result = false
+    end
     # board.stub(:winner?) { false }
     # board.stub(:draw?) { true }
-    # expect(board.game_over).to eq(:draw)
+    expect(board.game_over).to eq(:draw)
   end
 
   it "returns false if winner? returns false and draw? returns false" do
-    # board = Board.new
+    board = Board.new
+    board = double("Board")
+    allow(board).to receive(:winner?) {false}
+    allow(board).to receive(:draw?) {false}
+    allow(board).to receive(:game_over) do |return_result|
+      if board.winner? == false || board.draw? == false
+      return_result = true
+    else
+        return_result = false
+      end
     # board.stub(:winner?) { false }
-    # board.stub(:draw?) { false }
-    # expect(board.game_over).to eq(false)
+    # board.stub(:draw?) {false}
+    expect(board.game_over).to eq(false)
   end
-
+end
 end
 
 end
