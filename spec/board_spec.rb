@@ -40,6 +40,15 @@ context "#cell" do
     expect(board.get_cell(1,1)).to eq("test")
   end
 
+context "#set_cell" do
+  it "has a method that can update the value of the cell object at (x,y) with a specified value" do
+    grid = [["first_test_value", "", ""], ["", "", ""], ["", "", ""]]
+    board = Board.new(grid: grid)
+    expect(board.get_cell(0,0)).to eq("first_test_value")
+    board.set_cell(0,0,"second_test_value")
+    expect(board.get_cell(0,0)).to eq("second_test_value")
+  end
+end
 end
 end
 end

@@ -3,14 +3,18 @@ require "./lib/cell.rb"
 module TicTacToe
 
   class Board
-    attr_accessor :grid
+    attr_reader :grid
 
     def initialize(input = {})
       @grid = input.fetch(:grid, default_grid)
     end
 
     def get_cell(x,y)
-      @grid[x][y]
+      grid[x][y]
+    end
+
+    def set_cell(x,y,value)
+      grid[x][y] = value
     end
 
     private
