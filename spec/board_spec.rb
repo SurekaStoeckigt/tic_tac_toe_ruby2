@@ -49,6 +49,31 @@ context "#set_cell" do
     expect(board.get_cell(0,0)).to eq("second_test_value")
   end
 end
+
+context "#game_over" do
+
+  it "returns a winner if there is one" do
+    # board = Board.new
+    # board.stub(:winner?) { true }
+    # expect(board.game_over).to eq(:winner)
+  end
+
+  it "returns :draw if winner? returns false but draw is true" do
+    # board = Board.new
+    # board.stub(:winner?) { false }
+    # board.stub(:draw?) { true }
+    # expect(board.game_over).to eq(:draw)
+  end
+
+  it "returns false if winner? returns false and draw? returns false" do
+    # board = Board.new
+    # board.stub(:winner?) { false }
+    # board.stub(:draw?) { false }
+    # expect(board.game_over).to eq(false)
+  end
+
+end
+
 end
 end
 end
